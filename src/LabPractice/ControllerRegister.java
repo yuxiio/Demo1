@@ -38,7 +38,7 @@ public class ControllerRegister implements ActionListener {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://175.24.187.55:3306/JAVALAB?useSSL=false&useUnicode=true&characterEncoding=utf-8";
-            Connection connection = DriverManager.getConnection(url, "root", "abcABC123...");
+            Connection connection = DriverManager.getConnection(url, "root", "");
 
             String sql = "INSERT INTO CashSystem_Member (name , phone_id , time) VALUES('"+name+"' , '"+phoneId+
                     "' , '"+ time +"' );";
