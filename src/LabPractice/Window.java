@@ -53,7 +53,9 @@ public class Window extends JFrame {
     JTextField fieldPhoneid;
     JTextField fieldProductId;
     JTextField fieldShowAmount;
+
     JTextArea areaMain;
+    JScrollPane jScrollPane;//设定主文本区的滚动条
 
     JButton buttonCatch;
     JButton buttonRegister;
@@ -122,12 +124,18 @@ public class Window extends JFrame {
         this.add(buttonCashing);
 
         //定义主文本区和其大小
-        areaMain.setSize(400,250);
-        areaMain.setBounds(150, 120,400,250);
+//        areaMain.setSize(400,250);
+//        areaMain.setBounds(150, 120,400,250);
         areaMain.setLineWrap(true);
-        this.add(areaMain);
+//        this.add(areaMain);
         this.areaMain.setDisabledTextColor(Color.black);//设定不可选定时主文本区内字体的颜色（原浅蓝色）
         this.areaMain.setEnabled(false);//永久设定主文本区不可选定
+        jScrollPane = new JScrollPane(areaMain);//把主文本区添加滚动条
+        jScrollPane.setSize(400,250);
+        jScrollPane.setBounds(150, 120,400,250);
+        jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        this.add(jScrollPane);
 
         //定义结账按钮
         buttonCashOut.setBounds(150,375,150,30);

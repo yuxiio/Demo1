@@ -42,7 +42,7 @@ public class ControllerInquire implements ActionListener {
 
 
             //如果没查到记录，这该用户不存在，直接退出了，省点资源
-            if(!resultSet.next()){
+            if(resultSet.isLast()){
                 window.areaMain.setText("This Member and PhoneId are not registered\n!!!Error!!!\n");
                 preparedStatement.close();
                 connection.close();
